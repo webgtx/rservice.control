@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 key=$(date | base64 | base64)
-echo $key > .config/key.dat
+echo "$key" | tr -d "\n" > .config/key.dat
 echo -[ DONE ]-
 echo $(date)

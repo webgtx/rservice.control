@@ -13,9 +13,9 @@ $private_key = new FileData(".config/key.dat");
 $allowed_cmd = new FileData(".config/allowed.dat");
 $ip_arr = explode("\n", $ip_list->fdata);
 $allowed_arr = explode("\n", $allowed_cmd->fdata);
+$stdout = null;
 foreach($allowed_arr as $cmd)
   $allowed_arr[$cmd] = 1;
-$stdout;
 
 
 foreach($ip_arr as $ip) {
